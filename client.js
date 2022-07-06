@@ -11,12 +11,15 @@ const connect = function () {
   conn.setEncoding("utf8");
 
   conn.on("connect", () => {
+    conn.write("Name: Dom");
+  });
+
+  conn.on("connect", () => {
     // code that does something when the connection is first established
-    console.log("connected successfully")
+    console.log("Successfully connected to game server")
   });
 
   conn.on("data", (data) => {
-    // code that does something when the connection is first established
     console.log(data)
   });
 
@@ -24,6 +27,7 @@ const connect = function () {
 };
 
 console.log("Connecting ...");
+
 
 module.exports = connect;
 
