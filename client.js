@@ -19,9 +19,12 @@ const connect = function() {
     console.log(data);
   });
 
+  conn.on("close", () => {
+    console.log("left game server, press Ctrl-C to exit")
+  });
+  
+  console.log("Connecting ...");
   return conn;
 };
-
-console.log("Connecting ...");
 
 module.exports = connect;
